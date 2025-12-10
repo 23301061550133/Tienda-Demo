@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda Demo - Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Tienda Demo</div>
+
+    <div class="search">
+      <input id="searchInput" placeholder="Buscar productos, marcas..." />
+    </div>
+
+    <div class="category-buttons">
+      <button class="catBtn" data-cat="all">Todas</button>
+      <button class="catBtn" data-cat="ropa">Ropa</button>
+      <button class="catBtn" data-cat="electronica">Electrónica</button>
+      <button class="catBtn" data-cat="accesorios">Accesorios</button>
+    </div>
+
+    <div class="actions">
+      <button id="favBtn">Favoritos (<span id="favCount">0</span>)</button>
+      <button id="cartBtn">Carrito (<span id="cartCount">0</span>)</button>
+      <button id="loginBtn">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="filters">
+      <h3>Filtrar</h3>
+
+      <label>Marca
+        <select id="brandFilter">
+          <option value="">Todas</option>
+          <option>Gymshark</option>
+          <option>YoungLA</option>
+        </select>
+      </label>
+
+      <label>Ordenar
+        <select id="sortSelect">
+          <option value="default">Relevancia</option>
+          <option value="price-asc">Precio: bajo a alto</option>
+          <option value="price-desc">Precio: alto a bajo</option>
+          <option value="rating-desc">Mejor valorados</option>
+        </select>
+      </label>
+    </aside>
+
+    <section class="products" id="products"></section>
+  </main>
+
+  <!-- LOGIN -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Iniciar sesión (demo)</h3>
+      <input id="email" placeholder="correo@ejemplo.com" />
+      <input id="password" type="password" placeholder="contraseña" />
+      <button id="doLogin">Entrar</button>
+      <button class="close">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div id="productDetail"></div>
+      <button class="close">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- 🛒 CARRITO MODAL -->
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content" style="width:450px;">
+      <h3>🛒 Tu carrito</h3>
+      <div id="cartItems"></div>
+      <h3>Total: <span id="cartTotal">$0.00</span></h3>
+
+
+      <button class="close">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- ❤️ FAVORITOS MODAL -->
+  <div id="favModal" class="modal hidden">
+    <div class="modal-content" style="width:450px;">
+      <h3>❤️ Favoritos</h3>
+      <div id="favItems"></div>
+      <button class="close">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
